@@ -1,0 +1,123 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "angularjs/angular.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "angularjs/legacy/angular-scenario-1.2.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "angularjs/angular-cookies.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "angularjs/angular-animate.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "angularjs/angular-route.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "angularjs/angular-resource.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "angularjs/angular-sanitize.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/cordova.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/BatteryStatus.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Contacts.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Camera.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Device.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/DeviceMotion.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/DeviceOrientation.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/FileSystem.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Dialogs.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/FileTransfer.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/InAppBrowser.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/MediaCapture.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/NetworkInformation.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Push.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Splashscreen.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/StatusBar.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Media.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Vibration.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Globalization.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/WebSQL.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova/plugins/Keyboard.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova-ionic/plugins/keyboard.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "cordova-ionic/cordova-ionic.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "ionic/ionic.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "moment/moment-node.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "moment/moment.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "sweetalert/sweetalert.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "c560ba6f0f55ce6f50e9d06e37b5bc0e2b9117b0"
+    }
+  }
+}
