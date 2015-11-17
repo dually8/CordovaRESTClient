@@ -6,11 +6,12 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
-var typescript = require('gulp-tsc');
+// var typescript = require('gulp-tsc');
 
 var paths = {
   sass: ['./scss/**/*.scss'],
-  ts: ['./www/app/_app.ts']
+  ts: ['./www/app/**/*.ts'],
+  appts: ['./www/app/_app.ts']
 };
 
 gulp.task('default', ['sass']);
@@ -28,21 +29,26 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
- 
-gulp.task('tsc', function(){
-  var options = {
-    module: "amd",
-    target: "ES5",
-    out: "./www/app/js/app.js",
-    sourceMap: true
-  };
-  gulp.src(paths.ts)
-    .pipe(typescript(options))
-    // .pipe(gulp.dest('dest/'))
+
+// gulp.task('compile', function(){
+//   var options = {
+//     module: "amd",
+//     target: "ES5",
+//     out: "./www/app/js/app.js",
+//     sourceMap: true
+//   };
+//   gulp.src(paths.ts)
+//     .pipe(typescript(options))
+//     .pipe(gulp.dest('./js'))
+// });
+
+gulp.task('tsc', ['sass'], function () {
+    sh.exec("tsc --target es5 --sourceMap --out ./www/js/app.js ./www/app/_app.ts");
 });
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.ts, ['tsc']);
 });
 
 gulp.task('install', ['git-check'], function() {

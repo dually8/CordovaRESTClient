@@ -1,0 +1,31 @@
+<ion-view title="REST Client" hide-nav-bar="true">
+    <div class="bar bar-header">
+        <div class="h1 title">REST Client</div>
+        <button class="button button-clear button-positive" ng-click="ctrl.sendRequest()">Send</button>
+    </div>
+
+    <ion-content padding="'true'" class="has-header">
+        <div class="list card">
+            <div class="item item-divider">Request</div>
+            <div class="item item-body">
+                <form class="list">
+                    <label class="item item-select">
+                        <span class="input-label">Method</span>
+                        <select ng-options="methods for methods in ctrl.methods" ng-model="ctrl.currentMethod">
+                        </select>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">URL</span>
+                        <input type="text" ng-model="ctrl.url" placeholder="http://somewhere">
+                    </label>
+                </form>
+            </div>
+        </div>
+        <div class="list card">
+            <div class="item item-divider">Response</div>
+            <div class="item item-body">
+                <p ng-bind-html="ctrl.response" style="white-space: pre-wrap;"></p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
