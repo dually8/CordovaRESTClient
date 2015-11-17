@@ -23,7 +23,11 @@ module app {
             });
         })
 
-        .config(function($stateProvider, $urlRouterProvider) {
+        .config(function($stateProvider: ng.ui.IStateProvider, 
+                         $urlRouterProvider: ng.ui.IUrlRouterProvider, 
+                         $ionicConfigProvider: ionic.utility.IonicConfigProvider) {
+            $ionicConfigProvider.backButton.previousTitleText(false);
+            $ionicConfigProvider.tabs.position('bottom');
             $stateProvider
 
             // setup an abstract state for the tabs directive
