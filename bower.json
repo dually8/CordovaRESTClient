@@ -8,7 +8,8 @@
     "font-awesome": "fontawesome#~4.4.0",
     "angular": "~1.4.8",
     "jquery": "~2.1.4",
-    "angular-mocks": "~1.4.8"
+    "angular-mocks": "~1.4.8",
+    "angular-bootstrap": "~0.14.3"
   },
   "resolutions": {
     "angular": "~1.4.8"

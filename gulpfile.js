@@ -6,11 +6,13 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var tslint = require('gulp-tslint');
+var gulpIgnore = require('gulp-ignore');
 
 var paths = {
   sass: ['./scss/**/*.scss'],
   ts: ['./www/app/**/*.ts'],
-  appts: ['./www/app/_app.ts']
+  tslint: ['./www/app/**/*.ts', '!./www/app/typings/**/*.d.ts']
 };
 
 gulp.task('default', ['sass']);
@@ -55,4 +57,47 @@ gulp.task('git-check', function(done) {
 	process.exit(1);
   }
   done();
+});
+
+gulp.task('tslint', function() {
+	// https://github.com/panuhorsmalahti/gulp-tslint#all-default-report-options
+	var reportOptions = {
+		emitError: false,
+		reportLimit: 0,
+		summarizeFailureOutput: true
+	};
+
+	return gulp.src(paths.tslint)
+		.pipe(gulpIgnore.exclude('./www/app/typings/**/*.d.ts'))
+		.pipe(tslint())
+		.pipe(tslint.report('prose', reportOptions));
+});
+
+gulp.task('build-ios', ['tsc'], function() {
+	sh.exec("ionic build ios");
+});
+
+gulp.task('build-android', ['tsc'], function() {
+	sh.exec("ionic build android");
+});
+
+gulp.task('openXcode', ['build-ios'], function() {
+	sh.exec("open ./platforms/ios/*.xcodeproj");
+});
+
+gulp.task('emulate-iPhone6', ['tsc'], function() {
+	sh.exec("ionic emulate ios --target=\"iPhone-6\"");
+});
+
+gulp.task('emulate-iPad2', ['tsc'], function() {
+	sh.exec("ionic emulate ios --target=\"iPad-2\"");
+});
+
+gulp.task('ios', ['tsc'], function() {
+	sh.exec("ionic run ios --device");
+});
+
+gulp.task('android', ['tsc'], function() {
+	sh.exec("adb devices");
+	sh.exec("ionic run android");
 });
