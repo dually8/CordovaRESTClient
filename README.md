@@ -5,8 +5,7 @@ An application using Apache Cordova, Ionic Framework, and Typescript. Currently 
 ## Requirements
  1. [node.js](https://nodejs.org/)
  2. Cordova and Ionic - ```$ [sudo] npm install -g cordova ionic```
- 3. TypeScript 1.4 - ```$ [sudo] npm install -g typescript@1.4 ```
-     1. If in windows, download [typescript 1.4](http://www.typescriptlang.org/#Download)
+ 3. TypeScript - ```$ [sudo] npm install -g typescript ```
  4. Gulp - ```$ [sudo] npm install -g gulp```
  5. Bower - ```$ [sudo] npm install -g bower```
 
@@ -14,7 +13,7 @@ An application using Apache Cordova, Ionic Framework, and Typescript. Currently 
 1. ```$ [sudo] npm install ionic -g```
 2. Change bower.json to latest version: "ionic": "driftyco/ionic-bower#master"
 3. ```$ bower update```
-    - Though you may have to use ```$ sudo bower install``` 
+	- Though you may have to use ```$ sudo bower install``` 
 4. (```$ ionic lib update```) might also work
 
 ### Set up
@@ -37,22 +36,21 @@ An application using Apache Cordova, Ionic Framework, and Typescript. Currently 
  - [Install tsd](https://github.com/DefinitelyTyped/tsd)
    - ````$[sudo] npm install tsd -g````
    - Using tsd
-        - ````$ cd www/app````
-        - ````$ tsd init````(this creates the typings folder and the tsd.json file
-    - Installing the packages
-        - ````$ tsd install angular cordova-ionic cordova -ros````
+		- ````$ cd www/app````
+		- ````$ tsd init````(this creates the typings folder and the tsd.json file
+	- Installing the packages
+		- ````$ tsd install angular cordova-ionic cordova -ros````
 
 ## Updating npm packages
 1.	````sudo npm install –g npm-check-updates````
-    - installs npm-check-updates package
+	- installs npm-check-updates package
 2.	````sudo rm –rf node_modules/````
-    - removes the node_modules folder so we can update it.
+	- removes the node_modules folder so we can update it.
 3.	````npm-check-updates –u````
-    - updates your package.json with the latest npm packages
+	- updates your package.json with the latest npm packages
 4.	````sudo npm install````
-    - installs latest node packages from your package.json to the newly created node_modules folder.
+	- installs latest node packages from your package.json to the newly created node_modules folder.
 
 ## To-do
  - Finish building out typescript
- - Make sure gulp-tsc works okay
  - Build actual app

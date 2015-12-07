@@ -1,31 +1,152 @@
-<ion-view title="REST Client" hide-nav-bar="true">
-    <div class="bar bar-header">
-        <div class="h1 title">REST Client</div>
-        <button class="button button-clear button-positive" ng-click="ctrl.sendRequest()">Send</button>
-    </div>
+<ion-view title="REST Client" hide-nav-bar="true" scroll="true" overflow-scroll="true">
+	<div class="bar bar-header">
+		<div class="h1 title">REST Client</div>
+		<button class="button button-clear button-positive" ng-click="ctrl.sendRequest()">Send</button>
+	</div>
 
-    <ion-content padding="'true'" class="has-header">
-        <div class="list card">
-            <div class="item item-divider">Request</div>
-            <div class="item item-body">
-                <form class="list">
-                    <label class="item item-select">
-                        <span class="input-label">Method</span>
-                        <select ng-options="methods for methods in ctrl.methods" ng-model="ctrl.currentMethod">
-                        </select>
-                    </label>
-                    <label class="item item-input">
-                        <span class="input-label">URL</span>
-                        <input type="text" ng-model="ctrl.url" placeholder="http://somewhere">
-                    </label>
-                </form>
-            </div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">Response</div>
-            <div class="item item-body">
-                <p ng-bind-html="ctrl.response" style="white-space: pre-wrap;"></p>
-            </div>
-        </div>
-    </ion-content>
+	<ion-content padding="true" class="has-header">
+		<div class="button-bar">
+			<a class="button" ng-click="ctrl.addHeader()">Add Header</a>
+			<a class="button" ng-click="ctrl.addBasicAuth()">Basic Auth</a>
+			<a class="button" ng-click="ctrl.addParam()">Add Param</a>
+		</div>
+		<div class="list card">
+			<div class="item item-divider">Request</div>
+			<div class="item item-body">
+				<form class="list">
+					<label class="item item-select">
+						<span class="input-label">Method</span>
+						<select ng-options="methods for methods in ctrl.methods" ng-model="ctrl.currentMethod">
+						</select>
+					</label>
+					<label class="item item-input">
+						<span class="input-label">URL</span>
+						<input type="text" ng-model="ctrl.url" placeholder="http://somewhere">
+					</label>
+				</form>
+			</div>
+		</div>
+		<div class="list card">
+			<div class="item item-divider">Headers</div>
+			<div class="item item-body">
+				<ion-list>
+					<ion-item ng-repeat="header in ctrl.headers track by $index">
+						{{$index+1}}) {{header.name}} : {{header.value}}
+						<ion-option-button class="button-assertive" ng-click="ctrl.removeHeader(header)">
+							Remove
+						</ion-option-button>
+					</ion-item>
+				</ion-list>
+			</div>
+		</div>
+		<div class="list card">
+			<div class="item item-divider">Parameters</div>
+			<div class="item item-body">
+				<ion-list>
+					<ion-item ng-repeat="param in ctrl.parameters track by $index">
+						{{$index+1}}) {{param.key}} : {{param.value}}
+						<ion-option-button class="button-assertive" ng-click="ctrl.removeParam(param)">
+							Remove
+						</ion-option-button>
+					</ion-item>
+				</ion-list>
+			</div>
+		</div>
+		<div class="list card">
+			<div class="item item-divider">Response</div>
+			<div class="item item-body">
+				<p ng-bind-html="ctrl.response" style="white-space: pre-wrap;"></p>
+			</div>
+		</div>
+	</ion-content>
 </ion-view>
+
+<script id="add-param.html" type="text/ng-template">
+	<ion-modal-view>
+		<ion-header-bar>
+			<div class="buttons">
+				<button class="button button-positive" ng-click="ctrl.cancelParam()">
+					Cancel
+				</button>
+			</div>
+			<h1 class="title">Add URL Parameter</h1>
+			<div class="buttons">
+				<button class="button button-positive" ng-click="ctrl.saveParam()">
+					Save
+				</button>
+			</div>
+		</ion-header-bar>
+		<ion-content>
+			<form class="list">
+				<label class="item item-input">
+					<span class="input-label">Key</span>
+					<input type="text" ng-model="ctrl.newParam.key" placeholder="Key">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Value</span>
+					<input type="text" ng-model="ctrl.newParam.value" placeholder="Value">
+				</label>
+			</form>
+		</ion-content>
+	</ion-modal-view>
+</script>
+
+<script id="add-header.html" type="text/ng-template">
+	<ion-modal-view>
+		<ion-header-bar>
+			<div class="buttons">
+				<button class="button button-positive" ng-click="ctrl.cancelHeader()">
+					Cancel
+				</button>
+			</div>
+			<h1 class="title">Add Header</h1>
+			<div class="buttons">
+				<button class="button button-positive" ng-click="ctrl.saveHeader()">
+					Save
+				</button>
+			</div>
+		</ion-header-bar>
+		<ion-content>
+			<form class="list">
+				<label class="item item-input">
+					<span class="input-label">Name</span>
+					<input type="text" ng-model="ctrl.newHeader.name" placeholder="Name">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Value</span>
+					<input type="text" ng-model="ctrl.newHeader.value" placeholder="Value">
+				</label>
+			</form>
+		</ion-content>
+	</ion-modal-view>
+</script>
+
+<script id="basic-auth.html" type="text/ng-template">
+	<ion-modal-view>
+		<ion-header-bar>
+			<div class="buttons">
+				<button class="button button-positive" ng-click="ctrl.cancelBasicAuth()">
+					Cancel
+				</button>
+			</div>
+			<h1 class="title">Basic Authentication</h1>
+			<div class="buttons">
+				<button class="button button-positive" ng-click="ctrl.saveBasicAuth()">
+					Save
+				</button>
+			</div>
+		</ion-header-bar>
+		<ion-content>
+			<form class="list">
+				<label class="item item-input">
+					<span class="input-label">Username</span>
+					<input type="text" ng-model="ctrl.basicAuth.username" placeholder="Username">
+				</label>
+				<label class="item item-input">
+					<span class="input-label">Password</span>
+					<input type="password" ng-model="ctrl.basicAuth.password" placeholder="Password">
+				</label>
+			</form>
+		</ion-content>
+	</ion-modal-view>
+</script>

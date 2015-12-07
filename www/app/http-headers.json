@@ -1,0 +1,61 @@
+{
+	"headers": [
+		{
+			"name": "Accept"
+		},
+		{
+			"name": "Accept-Language"
+		},
+		{
+			"name": "Access-Control-Allow-Origin"
+		},
+		{
+			"name": "Authorization"
+		},
+		{
+			"name": "Cache-Control"
+		},
+		{
+			"name": "Content-Security-Policy"
+		},
+		{
+			"name": "Content-Type"
+		},
+		{
+			"name": "If-Match"
+		},
+		{
+			"name": "If-None-Match"
+		},
+		{
+			"name": "If-Range"
+		},
+		{
+			"name": "Max-Forwards"
+		},
+		{
+			"name": "Pragma"
+		},
+		{
+			"name": "Proxy-Authorization"
+		},
+		{
+			"name": "Origin"
+		},
+		{
+			"name": "Range"
+		},
+		{
+			"name": "Strict-Transport-Security"
+		},
+		{
+			"name": "Warning"
+		},
+		{
+			"name": "X-Do-Not-Track"
+		},
+		{
+			"name": "X-Requested-With"
+		}
+	]
+}

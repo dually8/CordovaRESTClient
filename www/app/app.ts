@@ -3,7 +3,7 @@
 module app {
 
     'use strict';
-    angular.module('restclient', ['ionic'])
+    angular.module('restclient', ['ionic', 'ui.bootstrap'])
         .filter('unsafe', function($sce) {
             return $sce.trustAsHtml;
         })
@@ -23,8 +23,8 @@ module app {
             });
         })
 
-        .config(function($stateProvider: ng.ui.IStateProvider, 
-                         $urlRouterProvider: ng.ui.IUrlRouterProvider, 
+        .config(function($stateProvider: ng.ui.IStateProvider,
+                         $urlRouterProvider: ng.ui.IUrlRouterProvider,
                          $ionicConfigProvider: ionic.utility.IonicConfigProvider) {
             $ionicConfigProvider.backButton.previousTitleText(false);
             $ionicConfigProvider.tabs.position('bottom');

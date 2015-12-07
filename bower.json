@@ -6,11 +6,11 @@
   },
   "dependencies": {
     "font-awesome": "fontawesome#~4.4.0",
-    "angular": "~1.4.7",
+    "angular": "~1.4.8",
     "jquery": "~2.1.4",
-    "angular-mocks": "~1.4.7"
+    "angular-mocks": "~1.4.8"
   },
   "resolutions": {
-    "angular": "~1.4.7"
+    "angular": "~1.4.8"
   }
 }

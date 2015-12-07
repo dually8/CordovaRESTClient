@@ -14,7 +14,7 @@ module app.controllers {
             _this.appVersion = "";
 
             if (window.cordova) {
-				//get app version
+                //get app version
             }
         }
     }
