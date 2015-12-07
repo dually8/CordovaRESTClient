@@ -13,7 +13,7 @@ An application using Apache Cordova, Ionic Framework, and Typescript. Currently 
 1. ```$ [sudo] npm install ionic -g```
 2. Change bower.json to latest version: "ionic": "driftyco/ionic-bower#master"
 3. ```$ bower update```
-	- Though you may have to use ```$ sudo bower install``` 
+    - Though you may have to use ```$ sudo bower install```
 4. (```$ ionic lib update```) might also work
 
 ### Set up
@@ -25,32 +25,41 @@ An application using Apache Cordova, Ionic Framework, and Typescript. Currently 
 
 #### Architecture
  - The architecture of this template is a modified MVC framework. All application code is contained in the /www/app folder.
- - Models are placed in a models folder (e.g. /www/app/models/). 
- - Views and Controllers are placed in their own folder together (e.g. /www/app/playlist/). 
- - Services are placed in the common folder (e.g. /www/app/common/).  
+ - Models are placed in a models folder (e.g. /www/app/models/).
+ - Views and Controllers are placed in their own folder together (e.g. /www/app/playlist/).
+ - Services are placed in the common folder (e.g. /www/app/common/).
  - Main app views, models, and controller are just placed in the /www/app/ folder (e.g. /www/app/app-controller.ts).
 
 #### Extras
- - When adding a plugin, make sure to use ````ionic plugin add <plugin>```` rather than ````cordova plugin add <plugin>```` in order to ensure that the plugin is added to the package.json.
- - To add a plugin without saving it to the package.json, add the --nosave argument to the add plugin command (e.g. ````$ ionic plugin add <plugin> --nosave ````)
+ - When adding a plugin, make sure to use ```ionic plugin add <plugin>``` rather than ```cordova plugin add <plugin>``` in order to ensure that the plugin is added to the package.json.
+ - To add a plugin without saving it to the package.json, add the --nosave argument to the add plugin command (e.g. ```$ ionic plugin add <plugin> --nosave ```)
  - [Install tsd](https://github.com/DefinitelyTyped/tsd)
-   - ````$[sudo] npm install tsd -g````
+   - ```$[sudo] npm install tsd -g```
    - Using tsd
-		- ````$ cd www/app````
-		- ````$ tsd init````(this creates the typings folder and the tsd.json file
-	- Installing the packages
-		- ````$ tsd install angular cordova-ionic cordova -ros````
+        - ```$ cd www/app```
+        - ```$ tsd init```(this creates the typings folder and the tsd.json file
+    - Installing the packages
+        - ```$ tsd install angular cordova-ionic cordova -ros```
 
 ## Updating npm packages
-1.	````sudo npm install –g npm-check-updates````
-	- installs npm-check-updates package
-2.	````sudo rm –rf node_modules/````
-	- removes the node_modules folder so we can update it.
-3.	````npm-check-updates –u````
-	- updates your package.json with the latest npm packages
-4.	````sudo npm install````
-	- installs latest node packages from your package.json to the newly created node_modules folder.
+1.    ```sudo npm install –g npm-check-updates```
+    - installs npm-check-updates package
+2.    ```sudo rm –rf node_modules/```
+    - removes the node_modules folder so we can update it.
+3.    ```npm-check-updates –u```
+    - updates your package.json with the latest npm packages
+4.    ```sudo npm install```
+    - installs latest node packages from your package.json to the newly created node_modules folder.
 
 ## To-do
- - Finish building out typescript
- - Build actual app
+In no particular order
+ - UI/UX
+   - Styling
+   - App Icon
+   - Splash screen(?)
+ - Edit params
+ - Edit headers
+ - Other types of authentication
+ - Auto-complete HTTP headers
+ - Copy response output to clipboard
+ - Save history

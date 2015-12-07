@@ -24,7 +24,8 @@ module app.controllers {
         constructor(
             private $scope: ng.IScope,
             private $http: ng.IHttpService,
-            private $ionicModal: ionic.modal.IonicModalService) {
+            private $ionicModal: ionic.modal.IonicModalService,
+            private $ionicLoading: ionic.loading.IonicLoadingService) {
             this.init();
         }
 
@@ -43,11 +44,33 @@ module app.controllers {
                     newURL += param.value;
                 });
             }
+            if (this.basicAuth) {
+                var auth: models.IHeader = {
+                    name: "Authorization",
+                    value: "Basic " + btoa(this.basicAuth.username + ":" + this.basicAuth.password)
+                };
+                if (this.headers.indexOf(auth) < 0) {
+                    if (this.basicAuth.username && this.basicAuth.password) {
+                        this.headers.push(auth);
+                    }
+                }
+            }
 
             var config: ng.IRequestConfig = {
                 method: this.currentMethod,
-                url: newURL
+                url: newURL,
+                headers: {}
             };
+            if (this.headers.length > 0) {
+                this.headers.forEach((header: models.IHeader) => {
+                    config.headers[header.name] = header.value;
+                });
+            }
+
+            console.log(config);
+            this.$ionicLoading.show({
+                template: 'Loading...<br /><br /><ion-spinner icon="ios"></ion-spinner>'
+            });
             this.$http(config).then((promiseValue: ng.IHttpPromiseCallbackArg<{}>) => {
                 this.response = this.prettyJSONString(promiseValue);
             },
@@ -56,6 +79,9 @@ module app.controllers {
                 })
                 .catch((error: any) => {
                     this.response = this.prettyJSONString(error);
+                })
+                .finally(() => {
+                    this.$ionicLoading.hide();
                 });
 
         }
